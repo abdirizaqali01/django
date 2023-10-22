@@ -1,0 +1,179 @@
+/*-------------------------------*/
+/* PRESETS */
+/*-------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+html, body {
+    height: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+body {
+    overflow-x: hidden;
+}
+  
+body a:hover {
+    text-decoration: none;
+}
+
+
+@font-face {
+    font-family: "Draco";
+    src: url(fonts/draco.regular.otf);
+}
+
+@font-face {
+    font-family: "Nico Moji";
+    src: url(fonts/NicoMoji-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(fonts/SegoeUI.ttf);
+}
+
+
+/*----------------------------------------------------------*/
+/* GLOBAL VAR VALUES */
+/*----------------------------------------------------------*/
+:root {
+    /* colors */
+    --main-global-color: #616CA1;
+    --second-global-color: #202664;
+    --dark-global-color: #00012F;
+    --main-accent-color: #F3C40E;
+    --main-accent-darker-color: #A19130;
+    --main-text-color: #ffffff;
+
+    /* fonts */
+    --main-title-font: 'Draco';
+    --loading-text-font: 'Nico Moji';
+    --main-text-font: 'Segoe UI';
+}
+
+/*-------------------------------*/
+/* MAIN BG */
+/*-------------------------------*/
+.bg-video {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bg-video video {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.bg-video .blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(40px);
+    z-index: 2;
+}
+
+
+
+/*-------------------------------*/
+/* BIG LINE */
+/*-------------------------------*/
+.line {
+    position: absolute;
+    z-index: 8;
+    left: 420px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.line img {
+    height: 981px;
+}
+
+
+/*-------------------------------*/
+/* MAIN BUTTONS */
+/*-------------------------------*/
+.nav-container {
+    position: absolute;
+}
+
+.main-button {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 5;
+}
+
+.main-button button {
+    text-align: left;
+    width: 100%;
+    padding: 4px 0 4px 0;
+    background-color: var(--main-global-color);
+    border: none;
+    border-radius: 20px 0 0 10px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.main-button button:hover {
+    background: linear-gradient(160deg, var(--main-accent-color) 20%, var(--main-global-color) 70%);
+}
+
+.main-button button a {
+    font-family: var(--main-title-font);
+    text-decoration: none;
+    color: var(--main-global-color);
+    background: linear-gradient(180deg, var(--second-global-color) 0%, var(--dark-global-color) 100%);
+    margin-left: 6%;
+    padding: 1.5% 0 1.5% 3%;
+    display: block;
+    width: 80%;
+    font-size: 13px;
+    transform: skew(-12deg);
+    letter-spacing: 0.04em;
+}
+
+.main-button svg {
+    float: right;
+    margin-top: -1px;
+    position: relative;
+    z-index: 2;
+}
+
+/* individual button placements */
+.store-btn {
+    top: 370px;
+    left: 130px;
+}
+
+.gallery-btn {
+    top: 450px;
+    left: 124px;
+}
+
+.magazine-btn {
+    top: 530px;
+    left: 127px;
+}
+
+
+/*-------------------------------*/
+/* NEXT SECTION */
+/*-------------------------------*/

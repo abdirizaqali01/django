@@ -1,0 +1,212 @@
+{% load static %}
+
+{% block styles %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'shop.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mobileShop.css' %}">
+{% endblock %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Hennyday Anyday</title>
+
+    <!-- JQUERY SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="style.css">
+    <!-- SHOP STYLE -->
+    <link rel="stylesheet" href="shop_style.css">
+
+    <!-- Shortcut icon -->
+    <link rel="shortcut icon" type="image/png" href="images/logo-icon.png">
+</head>
+<body>
+    
+    <!-------------------------------------->
+    <!-- BACKGROUND -->
+    <!-------------------------------------->
+    <div class="bg-video">
+        <video id="bg_video" src="images/dark_blue_particles.mov" autoplay muted loop controls></video>
+        <!-- Video Playback Speed 0.4x -->
+        <script>
+            const video = document.getElementById('bg_video');
+    
+            // Set the playback rate to a slower speed (e.g., 0.5 for half speed)
+            video.playbackRate = 0.5; // Adjust this value as needed
+        </script>
+        <div class="blur"></div>
+    </div>
+
+
+    <!-------------------------------------->
+    <!-- MAIN LOGO -->
+    <!-------------------------------------->
+    <div class="logo" id="logo">
+        <a href="index.html"><img class="logo-img" src="images/logo-main.png" alt=""></a>
+    </div>
+
+
+    <!-------------------------------------->
+    <!-- CURVED LINE -->
+    <!-------------------------------------->
+    <div class="line">
+        <img src="images/Line2.svg" alt="">
+    </div>
+
+
+    <!-------------------------------------->
+    <!-- NAVIGATION BUTTONS -->
+    <!-------------------------------------->
+    <div class="nav-container">
+        <div class="about-btn main-button">
+            <button onclick="showProduct('product_shirts')">
+                <a href="#">Shirts</a>
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="103" height="18" viewBox="0 0 103 18" fill="none">
+                <path d="M0 0H103L101 18H51.5H42.4113C40.1399 18 37.8715 17.8388 35.623 17.5176L33.7423 17.2489C31.2913 16.8988 28.977 15.9049 27.0354 14.3687L17.7671 7.0355C13.0143 3.27503 7.31768 0.896043 1.30205 0.159434L0 0Z" fill="#616CA1"/>
+            </svg>
+        </div>
+
+        <div class="store-btn main-button">
+            <button onclick="showProduct('product_caps')">
+                <a href="#">Caps</a>
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="103" height="18" viewBox="0 0 103 18" fill="none">
+                <path d="M0 0H103L101 18H51.5H42.4113C40.1399 18 37.8715 17.8388 35.623 17.5176L33.7423 17.2489C31.2913 16.8988 28.977 15.9049 27.0354 14.3687L17.7671 7.0355C13.0143 3.27503 7.31768 0.896043 1.30205 0.159434L0 0Z" fill="#616CA1"/>
+            </svg>
+        </div>
+
+        <div class="gallery-btn main-button">
+            <button onclick="showProduct('product_hoodies')">
+                <a href="#">Hoodies</a>
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="103" height="18" viewBox="0 0 103 18" fill="none">
+                <path d="M0 0H103V18H51.5H42.4113C40.1399 18 37.8715 17.8388 35.623 17.5176L33.7423 17.2489C31.2913 16.8988 28.977 15.9049 27.0354 14.3687L17.7671 7.0355C13.0143 3.27503 7.31768 0.896043 1.30205 0.159434L0 0Z" fill="#616CA1" fill-opacity="1"/>
+            </svg>
+        </div>
+
+        <div class="magazine-btn main-button">
+            <button onclick="showProduct('product_socks')">
+                <a href="#">Socks</a>
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="103" height="18" viewBox="0 0 103 18" fill="none">
+                <path d="M0 0H103V18H51.5H42.4113C40.1399 18 37.8715 17.8388 35.623 17.5176L33.7423 17.2489C31.2913 16.8988 28.977 15.9049 27.0354 14.3687L17.7671 7.0355C13.0143 3.27503 7.31768 0.896043 1.30205 0.159434L0 0Z" fill="#616CA1" fill-opacity="1"/>
+            </svg>
+        </div>
+    </div>
+
+
+    <!-------------------------------------->
+    <!-- BACK BUTTON -->
+    <!-------------------------------------->
+    <div class="back-button" id="back_button">
+        <img src="images/back-bg.svg" alt="">
+    </div>
+    <div class="back-button-btn">
+        <button>
+            <a href="index.html">back</a>
+        </button>
+    </div>
+
+
+    <!-------------------------------------->
+    <!-- PRODUCTS -->
+    <!-------------------------------------->
+    <product-shirts class="product-group" id="product_shirts"></product-shirts>
+
+    <product-caps class="product-group" id="product_caps"></product-caps>
+
+    <product-hoodies class="product-group" id="product_hoodies"></product-hoodies>
+
+    <product-socks class="product-group" id="product_socks"></product-socks>
+
+
+
+    <!-- UN-NEEDED -->
+    <!--
+    <div class="item-wrapper">
+        <div class="slider-btn">
+            <button class="lefter" onclick="plusDivs(-1)"><img src="images/chevron-left.svg" alt=""></button>
+            <button class="righter" onclick="plusDivs(1)"><img src="images/chevron-right.svg" alt=""></button>
+        </div>
+
+
+         <div class="cart" id="cart">
+            <button>
+                <img src="images/cart.svg" alt="">
+                <p class="text">Cart</p>
+            </button>
+        </div>
+    
+
+        <div class="item">
+            <div class="product-views" id="product_views_1">
+                <div class="img-wrapper" data-target="img_1_1"><img src="images/shirt.png" alt=""></div>
+                <div class="img-wrapper" data-target="img_1_2"><img src="images/shirt-back.png" alt=""></div>
+            </div>
+            <div class="product-body">
+                <div class="product-display">
+                    <img id="img_1_1" src="images/shirt.png" alt="">
+                    <img class="initial-hidden" id="img_1_2" src="images/shirt-back.png" alt="">
+                </div>
+                <div class="shine">
+                    <img src="images/shiner.png" alt="">
+                </div>
+                <div class="product-description">
+                    <h2>Hennyday Anyday T-shirt</h2>
+                    <p>40€</p>
+                </div>
+                <div class="product-purchase">
+                    <button>L</button>
+                    <button>M</button>
+                    <button>S</button>
+                    <button class="buy-btn">BUY</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="product-views" id="product_views_2">
+                <div class="img-wrapper" data-target="img_2_1"><img src="images/black-shirt.png" alt=""></div>
+                <div class="img-wrapper" data-target="img_2_2"><img src="images/black-shirt-back.png" alt=""></div>
+            </div>
+            <div class="product-body">
+                <div class="product-display">
+                    <img id="img_2_1" src="images/black-shirt.png" alt="">
+                    <img class="initial-hidden" id="img_2_2" src="images/black-shirt-back.png" alt="">
+                </div>
+                <div class="shine">
+                    <img src="images/shiner.png" alt="">
+                </div>
+                <div class="product-description">
+                    <h2>Hennyday Anyday T-shirt</h2>
+                    <p>40€</p>
+                </div>
+                <div class="product-purchase">
+                    <button>L</button>
+                    <button>M</button>
+                    <button>S</button>
+                    <button class="buy-btn">BUY</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>-->
+
+    <!-------------------------------------->
+    <!-- SCRIPTS -->
+    <!-------------------------------------->
+    <!-- main script -->
+    <script src="src/shop_main_script.js"></script>
+
+    <!-- component script -->
+    <script defer type="module" src="src/shirts_script.js"></script>
+    <script defer type="module" src="src/caps_script.js"></script>
+    <script defer type="module" src="src/shop_component_style.js"></script>
+</body>
+</html>
+{% endblock %}

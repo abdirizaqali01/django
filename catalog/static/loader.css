@@ -1,0 +1,220 @@
+/*-------------------------------*/
+/* PRESETS */
+/*-------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+html, body {
+    height: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+body {
+    overflow-x: hidden;
+}
+  
+body a:hover {
+    text-decoration: none;
+}
+
+
+@font-face {
+    font-family: "Draco";
+    src: url(fonts/draco.regular.otf);
+}
+
+@font-face {
+    font-family: "Nico Moji";
+    src: url(fonts/NicoMoji-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(fonts/SegoeUI.ttf);
+}
+
+
+/*----------------------------------------------------------*/
+/* GLOBAL VAR VALUES */
+/*----------------------------------------------------------*/
+:root {
+    /* colors */
+    --main-global-color: #616CA1;
+    --second-global-color: #202664;
+    --dark-global-color: #00012F;
+    --main-accent-color: #F3C40E;
+    --main-accent-darker-color: #A19130;
+    --main-text-color: #ffffff;
+
+    /* fonts */
+    --main-title-font: 'Draco';
+    --loading-text-font: 'Nico Moji';
+    --main-text-font: 'Segoe UI';
+}
+
+
+/*-------------------------------*/
+/* MAIN BG */
+/*-------------------------------*/
+.bg-video {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bg-video video {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.bg-video .blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(40px);
+    z-index: 2;
+}
+
+
+/*-------------------------------*/
+/* MAIN GRAPHIC */
+/*-------------------------------*/
+.graphic {
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: 0.6s ease-out;
+}
+
+.graphic img {
+    width: 70vw;
+    margin-left: 15vw;
+}
+
+
+/*-------------------------------*/
+/* LOADING SECTION */
+/*-------------------------------*/
+.loading {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.loading h2 {
+    font-family: var(--loading-text-font);
+    text-shadow: 0px 5px 6px rgba(0, 0, 0, 0.39);
+    background-image: linear-gradient(var(--main-accent-color), var(--main-accent-darker-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.8em;
+    animation: blink 5.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.loading h3 {
+    font-family: var(--main-text-font);
+    font-weight: lighter;
+    color: var(--main-text-color);
+    font-size: 1.2em;
+    letter-spacing: 0.01em;
+    margin-top: 8px;
+}
+
+
+/*-------------------------------*/
+/* ENTER BUTTON */
+/*-------------------------------*/
+.enter-button {
+    position: absolute;
+    z-index: 25;
+    bottom: 13.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.enter-button a {
+    font-family: var(--loading-text-font);
+    font-size: 1.8em;
+    background-image: linear-gradient(var(--main-accent-color), var(--main-accent-darker-color));
+    text-shadow: 0px 5px 6px rgba(0, 0, 0, 0.39);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    pointer-events: none;
+    animation: fade-in 0.5s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    transition: .3s all;
+}
+
+.enter-button a:hover {
+    background-image: linear-gradient(var(--main-accent-darker-color), var(--main-accent-darker-color));
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+
+/*-------------------------------*/
+/* PIXEL TEXTURE LAYER */
+/*-------------------------------*/
+.pixel-texture {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.pixel-texture img {
+    width: 100%;
+}

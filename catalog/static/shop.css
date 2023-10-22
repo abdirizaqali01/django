@@ -1,0 +1,80 @@
+/*-------------------------------*/
+/* MAIN BUTTONS */
+/*-------------------------------*/
+.main-button button:active {
+    background: linear-gradient(160deg, var(--main-accent-color) 20%, var(--main-global-color) 70%);
+}
+
+.main-button button:focus > a {
+    color: var(--main-accent-color) !important;
+}
+
+.main-button button a:focus {
+    color: var(--main-accent-color) !important;
+}
+
+/*-------------------------------*/
+/* BACK BUTTON */
+/*-------------------------------*/
+.back-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.back-button-btn {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 3%;
+    z-index: 5;
+}
+
+.back-button-btn button {
+    text-align: left;
+    width: 80%;
+    padding: 4px 0 4px 0;
+    background-color: var(--main-global-color);
+    border: none;
+    border-radius: 0 20px 10px 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.back-button-btn button:hover {
+    background: linear-gradient(-160deg, var(--main-accent-color) 10%, var(--main-global-color) 50%);
+}
+
+.back-button-btn button a {
+    font-family: var(--main-title-font);
+    text-decoration: none;
+    color: var(--main-global-color);
+    background: linear-gradient(180deg, var(--second-global-color) 0%, var(--dark-global-color) 100%);
+    margin-left: 6%;
+    padding: 1.5% 0 1.5% 3%;
+    display: block;
+    width: 80%;
+    font-size: 13px;
+    transform: skew(-12deg);
+    letter-spacing: 0.04em;
+    cursor: pointer;
+}
+
+
+
+.product-group {
+    position: absolute;
+    height: 74%;
+    width: 50%;
+    z-index: 6;
+    right: 8%;
+    top: 13%;
+    display: none;
+}
+
+#product_shirts {
+    display: block;
+}
